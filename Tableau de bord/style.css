@@ -25,6 +25,16 @@
 
   --box-shadow: 0 2rem 3rem var(--color-light);
 }
+/*----------- Dark theme variables ------------*/
+.dark-theme-variables{
+    --color-background : #181a1e;
+    --color-white : #202528;
+    --color-dark : #edeffd;
+    --color-dark-variant : #a3bdcc;
+    --color-light : rgba(0, 0, 0, 0.4);
+    --color-shadow : 0 2rem 3rem var(--color-light);
+}
+
 *{
   margin : 0;
   padding: 0; 
@@ -446,6 +456,10 @@ main .recent-orders a{
     align-items: center;
     justify-content: center;
 }
+.right .sales-analytics .add-product:hover{
+    background: var(--color-primary);
+    color: white;
+}
 .right .sales-analytics .add-product div{
     display: flex;
     align-items: center;
@@ -455,10 +469,10 @@ main .recent-orders a{
     font-weight: 600;
 }
 /*=========== MEDIA QUERIES============= */
-@media(max-width :1300px) {
+@media(max-width :1200px) {
     .container{
-        width: 94%;
-        grid-template-columns: 7rem auto 23rem;
+        width: 96%;
+        grid-template-columns: 7rem auto 20rem;
     }
     aside .logo h2{
         display: none;
@@ -487,11 +501,12 @@ main .recent-orders a{
     main .recent-orders table{
         width:83vw;
     }
-    main table thead tr th:last-child,main table thead tr th:first-child{
+    main table thead tr th:last-child,
+    main table thead tr th:first-child{
         display: none;
     }
-    main table tbody tr th:last-child,
-    main table tbody th:first-child{
+    main table tbody tr td:last-child,
+    main table tbody tr td:first-child{
         display: none;
     }
 }
@@ -504,6 +519,7 @@ main .recent-orders a{
     }
     aside{
         position: fixed;
+        width: -100%;
         background : var(--color-white);
         z-index: 3;
         box-shadow: 1rem 3rem 4rem var(--color-light);
@@ -511,6 +527,12 @@ main .recent-orders a{
         padding-right: var(--card-padding);
         width: 18rem;
         display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+    @keyframes showMenu{
+        to{
+            left: 0;
+        }
     }
     aside .logo h2{
        display: inline; 
